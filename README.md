@@ -1,5 +1,27 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Portfolio
 
+A modern, responsive personal portfolio built with Next.js 15 and Tailwind CSS v4.
+
+Features
+- Hero, About, Skills, Projects, Experience, Contact sections
+- Sticky Navbar and Footer
+- Contact form wired to `/api/contact` (console logs by default)
+- Theme via CSS variables for easy color tweaks
+
+Local development
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000
+
+Customize
+- Update copy in the components under `app/sections` and `app/components`.
+- Replace images in `public/` and update links, social profiles in `Footer.jsx`.
+- Hook contact form to a real service inside `app/api/contact/route.js`.
 ## Getting Started
 
 First, run the development server:
