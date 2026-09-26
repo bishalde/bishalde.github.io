@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import Section from "../components/Section";
 import Arrow from "../components/Arrow";
@@ -72,6 +73,18 @@ export default function Projects() {
                     )}
                   </h3>
                   <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground lg:hidden">{p.description}</p>
+                  {p.image && (
+                    <div className="mt-5 max-w-md overflow-hidden rounded-xl ring-1 ring-white/10 lg:hidden">
+                      <Image
+                        src={p.image}
+                        alt={`${p.title} website`}
+                        width={1280}
+                        height={800}
+                        sizes="(min-width: 640px) 448px, 100vw"
+                        className="h-auto w-full"
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-wrap items-center gap-2 sm:justify-end">
                   {p.tags.map((t) => (
@@ -105,13 +118,26 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1, rotate: -4 }}
                 exit={{ opacity: 0, scale: 0.9, rotate: 0 }}
                 transition={{ duration: 0.35, ease }}
-                className="w-72 overflow-hidden rounded-2xl bg-[#1a1a1a] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] ring-1 ring-white/10"
+                className={`${project.image ? "w-96" : "w-72"} overflow-hidden rounded-2xl bg-[#1a1a1a] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] ring-1 ring-white/10`}
               >
-                <div className={`relative h-36 bg-gradient-to-br ${cardTints[hovered % cardTints.length]}`}>
-                  <span className="absolute bottom-3 left-4 text-5xl font-bold italic tracking-[-0.06em] text-white/90 mix-blend-overlay">
-                    {String(hovered + 1).padStart(2, "0")}
-                  </span>
-                </div>
+                {project.image ? (
+                  <div>
+                    {/* browser chrome */}
+                    <div className="flex items-center gap-1.5 border-b border-white/10 bg-[#141414] px-3 py-2">
+                      <span className="h-2 w-2 rounded-full bg-white/20" />
+                      <span className="h-2 w-2 rounded-full bg-white/20" />
+                      <span className="h-2 w-2 rounded-full bg-white/20" />
+                      <span className="ml-2 truncate text-[10px] text-white/40">{project.link?.replace(/^https?:\/\//, "").replace(/\/$/, "")}</span>
+                    </div>
+                    <Image src={project.image} alt="" width={1280} height={800} sizes="384px" className="block h-auto w-full" priority={false} />
+                  </div>
+                ) : (
+                  <div className={`relative h-36 bg-gradient-to-br ${cardTints[hovered % cardTints.length]}`}>
+                    <span className="absolute bottom-3 left-4 text-5xl font-bold italic tracking-[-0.06em] text-white/90 mix-blend-overlay">
+                      {String(hovered + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                )}
                 <p className="p-4 text-sm leading-relaxed text-white/80">{project.description}</p>
               </motion.div>
             )}

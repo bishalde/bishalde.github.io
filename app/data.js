@@ -138,9 +138,10 @@ export const profile = {
     {
       title: "MemoryBell",
       description:
-        "Free reminder service that never lets you miss a birthday or anniversary — personalised SMS and automated phone calls, days ahead.",
-      tags: ["SMS", "Voice Calls", "Reminders"],
+        "Save a date once and get a text on the day, or up to a week ahead, every year. Counts the years and keeps your gift ideas.",
+      tags: ["SMS", "Reminders", "Web App"],
       link: "https://memorybell.vercel.app/",
+      image: "/projects/memorybell.jpg",
     },
     {
       title: "Generative AI based Financial Advisor",
@@ -157,8 +158,10 @@ export const profile = {
     {
       title: "QRBuilder",
       description:
-        "Modern GitHub crawler in React using the GitHub API to explore repos, profiles, and trending projects.",
-      tags: ["React", "GitHub API"],
+        "QR codes for links, Wi-Fi, contact cards, emails, texts and locations. Custom colours, shapes and logos, exported as PNG, JPEG or SVG, all in the browser.",
+      tags: ["QR Codes", "Privacy-first", "Web App"],
+      link: "https://qrbuilder.vercel.app/",
+      image: "/projects/qrbuilder.jpg",
     },
     {
       title: "ProjectTree",
