@@ -51,7 +51,12 @@ export default function Projects() {
               onMouseEnter={() => setHovered(i)}
               className="group border-b border-white/10"
             >
-              <div className="grid gap-3 py-7 sm:grid-cols-[4rem_1fr_auto] sm:items-center sm:gap-8 sm:py-9">
+              <a
+                href={p.link}
+                target={p.link ? "_blank" : undefined}
+                rel={p.link ? "noopener noreferrer" : undefined}
+                className={`grid gap-3 py-7 sm:grid-cols-[4rem_1fr_auto] sm:items-center sm:gap-8 sm:py-9 ${p.link ? "cursor-pointer" : "cursor-default"}`}
+              >
                 <span className="text-sm tabular-nums text-white/40">({String(i + 1).padStart(2, "0")})</span>
                 <div className="min-w-0">
                   <h3
@@ -60,6 +65,11 @@ export default function Projects() {
                     } group-hover:translate-x-3 group-hover:italic`}
                   >
                     {p.title}
+                    {p.link && (
+                      <span className="ml-3 inline-block translate-y-[-0.35em] rounded-full border border-orange-400/40 px-2 py-0.5 align-middle text-[11px] font-normal not-italic tracking-normal text-orange-400">
+                        Live
+                      </span>
+                    )}
                   </h3>
                   <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground lg:hidden">{p.description}</p>
                 </div>
@@ -77,7 +87,7 @@ export default function Projects() {
                     className="ml-2 hidden h-5 w-5 text-orange-400 opacity-0 transition-all duration-300 group-hover:opacity-100 sm:inline-block"
                   />
                 </div>
-              </div>
+              </a>
             </motion.li>
           ))}
         </ul>

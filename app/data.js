@@ -136,10 +136,11 @@ export const profile = {
   ],
   projects: [
     {
-      title: "NOKIA Documents Navigator",
+      title: "MemoryBell",
       description:
-        "RAG platform to navigate and analyze 3GPP standards with multimodal inputs, similarity search, and secure OSS models.",
-      tags: ["RAG", "LLMs", "Vector DB"],
+        "Free reminder service that never lets you miss a birthday or anniversary — personalised SMS and automated phone calls, days ahead.",
+      tags: ["SMS", "Voice Calls", "Reminders"],
+      link: "https://memorybell.vercel.app/",
     },
     {
       title: "Generative AI based Financial Advisor",

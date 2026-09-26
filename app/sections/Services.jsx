@@ -16,7 +16,7 @@ export default function Services() {
       subtitle="End-to-end engineering — from the first commit to production monitoring."
     >
       <ul className="border-t border-white/10">
-        {profile.services.map((s, i) => (
+        {[...profile.services].reverse().map((s, i) => (
           <motion.li
             key={s.title}
             initial={{ opacity: 0, y: 24 }}
