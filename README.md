@@ -5,7 +5,7 @@
 [![Live site](https://img.shields.io/badge/Live_site-bishalde.vercel.app-111111?style=for-the-badge&logo=vercel&logoColor=white)](https://bishalde.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-bishalde-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bishalde)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-bishalde-111111?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bishalde/)
-[![Email](https://img.shields.io/badge/Email-itsbishalde@gmail.com-111111?style=for-the-badge&logo=gmail&logoColor=white)](mailto:itsbishalde@gmail.com)
+[![Email](https://img.shields.io/badge/Email-itsbishalde@yahoo.com-111111?style=for-the-badge&logo=yahoo&logoColor=white)](mailto:itsbishalde@yahoo.com)
 
 My personal portfolio: an editorial, monochrome design with a warm orange accent, built with Next.js 15, React 19, Tailwind CSS v4 and Framer Motion. It is fully responsive across phones, tablets and desktops.
 
