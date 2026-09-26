@@ -1,7 +1,8 @@
-import { Geist, Geist_Mono, Inter, Playfair_Display, DM_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Inter_Tight, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollProgress from "./components/ScrollProgress";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +20,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const interTight = Inter_Tight({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
@@ -127,12 +128,12 @@ export const metadata = {
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
     other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#FFD700" },
+      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#111111" },
     ],
   },
   other: {
-    "msapplication-TileColor": "#FFD700",
-    "theme-color": "#FFD700",
+    "msapplication-TileColor": "#111111",
+    "theme-color": "#111111",
   },
 };
 
@@ -145,8 +146,6 @@ export default function RootLayout({ children }) {
     "description": "Full-Stack Developer, AI Engineer, and DevOps Specialist with 3+ years of experience building scalable applications and machine learning solutions.",
     "url": "https://bishalde.vercel.app",
     "image": "https://bishalde.vercel.app/bishal.jpg",
-    "email": "itsbishalde@gmail.com",
-    "telephone": "+91-8299260163",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Bengaluru",
@@ -226,10 +225,8 @@ export default function RootLayout({ children }) {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-8299260163",
-      "contactType": "customer service",
-      "email": "itsbishalde@gmail.com",
-      "availableLanguage": ["English", "Hindi", "Bengali"]
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Hindi", "Bengali"]
     },
     "serviceType": [
       "Full Stack Web Development",
@@ -263,7 +260,7 @@ export default function RootLayout({ children }) {
           }}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#FFD700" />
+        <meta name="theme-color" content="#111111" />
         <meta name="color-scheme" content="light dark" />
         <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -274,10 +271,11 @@ export default function RootLayout({ children }) {
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Bishal De - Latest Updates" />
       </head>
       <body 
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${playfair.variable} ${dmSans.variable} antialiased bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${interTight.variable} ${dmSans.variable} antialiased bg-background text-foreground`}
         itemScope 
         itemType="https://schema.org/WebPage"
       >
+        <ScrollProgress />
         <Navbar />
         <main role="main" itemProp="mainContentOfPage">
           {children}
