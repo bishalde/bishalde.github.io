@@ -12,6 +12,14 @@ import { profile } from "../data";
 const ease = [0.16, 1, 0.3, 1];
 
 const categories = Object.entries(profile.skills).map(([name, items]) => ({ name, items }));
+
+// Tech shown as floating cards when a category is active (defaults to its first three).
+const featured = {
+  Frontend: ["NextJS", "ReactJS", "HTML", "CSS"],
+  Backend: ["Flask", "NodeJS", "Django"],
+  Database: ["ClickHouse", "MySQL", "MongoDB"],
+  "DevOps & Observability": ["AWS", "Kubernetes", "Grafana Stack", "OpenTelemetry"],
+};
 const totalSkills = categories.reduce((sum, c) => sum + c.items.length, 0);
 
 const companies = profile.experience.map((job) => job.company).slice(0, 3);
@@ -64,19 +72,21 @@ function StackRow({ category, active, onEnter }) {
 
 const cardLayout = [
   { rot: -6, x: "0%", y: "0%", bg: "bg-[#222]", light: false },
-  { rot: 5, x: "33%", y: "18%", bg: "bg-[#f1ecec]", light: true },
-  { rot: 9, x: "63%", y: "4%", bg: "bg-[#5e5e5e]", light: false },
+  { rot: 5, x: "25%", y: "20%", bg: "bg-[#f1ecec]", light: true },
+  { rot: -3, x: "50%", y: "2%", bg: "bg-[#5e5e5e]", light: false },
+  { rot: 9, x: "74%", y: "16%", bg: "bg-[#2e2e2e]", light: false },
 ];
 
 function FloatingCards({ category }) {
   return (
-    <div className="pointer-events-none absolute right-0 top-[62%] hidden h-44 w-[62%] lg:block">
+    <div className="pointer-events-none absolute right-0 top-[62%] hidden h-44 w-[70%] lg:block">
       <AnimatePresence mode="popLayout">
-        {category.items.slice(0, 3).map((name, i) => {
+        {(featured[category.name] || category.items.slice(0, 3)).map((name, i) => {
           const tech = iconMap[name];
           const Icon = tech?.icon;
           const l = cardLayout[i];
           const color = tech?.color === "#ffffff" && l.light ? "#111" : tech?.color;
+          const label = name === "Grafana Stack" ? "Grafana" : name;
           return (
             <motion.div
               key={category.name + name}
@@ -85,11 +95,11 @@ function FloatingCards({ category }) {
               exit={{ opacity: 0, y: -10, scale: 0.9 }}
               transition={{ duration: 0.5, delay: i * 0.06, ease }}
               style={{ left: l.x, top: l.y }}
-              className={`absolute flex h-36 w-32 flex-col justify-between rounded-2xl p-4 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)] ${l.bg}`}
+              className={`absolute flex h-32 w-28 flex-col justify-between rounded-2xl p-4 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)] ${l.bg}`}
             >
               {Icon ? <Icon size={34} style={{ color }} /> : <span />}
               <span className={`text-sm font-semibold leading-tight ${l.light ? "text-neutral-900" : "text-white"}`}>
-                {name}
+                {label}
               </span>
             </motion.div>
           );

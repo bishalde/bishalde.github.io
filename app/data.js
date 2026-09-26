@@ -48,7 +48,7 @@ export const profile = {
       "SvelteKit",
     ],
     Backend: ["NodeJS", "ExpressJS", "Django", "Flask", "FastAPI"],
-    Database: ["MySQL", "MongoDB"],
+    Database: ["ClickHouse", "MySQL", "MongoDB"],
     "Android Development": ["React Native"],
     "DevOps & Observability": [
       "AWS",
@@ -60,6 +60,7 @@ export const profile = {
       "Datadog",
       "Prometheus",
       "Grafana Stack",
+      "OpenTelemetry",
     ],
   },
   experience: [

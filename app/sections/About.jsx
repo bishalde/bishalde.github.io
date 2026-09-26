@@ -48,7 +48,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <Section id="about" eyebrow="About Me" title="Engineer, builder, tinkerer">
+    <Section id="about" eyebrow="About Me" title="Engineer, Builder, Tinkerer">
       <div ref={ref} className="grid gap-16 lg:grid-cols-[1.4fr_1fr] lg:gap-24">
         <div>
           <motion.p
@@ -81,7 +81,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-10 divide-y divide-white/10 border-y border-white/10"
           >
-            {profile.roles.map((role, i) => (
+            {[...profile.roles].reverse().map((role, i) => (
               <li key={role} className="group flex items-center justify-between py-3.5">
                 <span className="text-lg text-white/85 transition-colors group-hover:text-white">{role}</span>
                 <span className="text-xs tabular-nums text-white/30">{String(i + 1).padStart(2, "0")}</span>

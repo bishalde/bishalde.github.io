@@ -27,6 +27,8 @@ import {
   SiDatadog,
   SiPrometheus,
   SiGrafana,
+  SiClickhouse,
+  SiOpentelemetry,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa6";
 
@@ -50,6 +52,7 @@ export const iconMap = {
   "FastAPI": { icon: SiFastapi, color: "#009688" },
   "MySQL": { icon: SiMysql, color: "#4479A1" },
   "MongoDB": { icon: SiMongodb, color: "#47A248" },
+  "ClickHouse": { icon: SiClickhouse, color: "#FFCC01" },
   "React Native": { icon: SiReact, color: "#61DAFB" },
   "AWS": { icon: FaAws, color: "#FF9900" },
   "Docker": { icon: SiDocker, color: "#2496ED" },
@@ -60,6 +63,7 @@ export const iconMap = {
   "Datadog": { icon: SiDatadog, color: "#632CA6" },
   "Prometheus": { icon: SiPrometheus, color: "#E6522C" },
   "Grafana Stack": { icon: SiGrafana, color: "#F46800" },
+  "OpenTelemetry": { icon: SiOpentelemetry, color: "#F5A800" },
 };
 
 export default function TechIcon({ name, size = 20, showLabel = true, className = "" }) {
