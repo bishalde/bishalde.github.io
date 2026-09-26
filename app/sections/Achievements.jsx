@@ -14,7 +14,7 @@ export default function Achievements() {
       count={profile.achievements.length}
       subtitle="Hackathons where the idea, the build and the demo all came together."
     >
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {profile.achievements.map((a, i) => {
           const isFirst = a.rank === "1st";
           return (
@@ -24,7 +24,7 @@ export default function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.1, ease }}
-              className="group relative flex min-h-[22rem] flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-[#141414] p-7 transition-colors hover:border-white/20"
+              className="group relative flex flex-col sm:min-h-[20rem] sm:odd:last:col-span-2 lg:odd:last:col-span-1 lg:min-h-[22rem] overflow-hidden rounded-2xl border border-white/[0.07] bg-[#141414] p-7 transition-colors hover:border-white/20"
             >
               {isFirst && (
                 <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-orange-500/25 blur-3xl transition-opacity duration-500 group-hover:opacity-100 opacity-60" />
@@ -32,7 +32,7 @@ export default function Achievements() {
 
               <div className="relative flex items-start justify-between">
                 <span
-                  className={`-ml-1 py-1 pl-1 pr-4 text-8xl font-bold italic leading-none tracking-[-0.07em] ${
+                  className={`-ml-1 py-1 pl-1 pr-4 text-7xl font-bold italic sm:text-8xl leading-none tracking-[-0.07em] ${
                     isFirst
                       ? "bg-gradient-to-br from-amber-300 via-orange-500 to-red-600 bg-clip-text text-transparent"
                       : "text-white/85"
@@ -40,12 +40,12 @@ export default function Achievements() {
                 >
                   {a.rank}
                 </span>
-                <span className="text-xs uppercase tracking-wider text-white/40">{a.period}</span>
+                <span className="shrink-0 pt-2 text-right text-xs uppercase tracking-wider text-white/40">{a.period}</span>
               </div>
 
-              <div className="relative mt-auto pt-16">
+              <div className="relative mt-auto pt-8 sm:pt-16">
                 <h3 className="text-2xl font-medium tracking-[-0.03em] text-white">{a.title}</h3>
-                <p className="mt-3 min-h-[4.5rem] text-sm leading-relaxed text-muted-foreground">{a.details}</p>
+                <p className="mt-3 text-sm lg:min-h-[4.5rem] leading-relaxed text-muted-foreground">{a.details}</p>
               </div>
             </motion.article>
           );

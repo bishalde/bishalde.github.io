@@ -39,11 +39,11 @@ export default function Navbar() {
         <nav className="mx-auto max-w-7xl px-6 sm:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="#" className="font-display text-2xl font-bold tracking-tight text-foreground transition-opacity hover:opacity-80">
-            BISHAL
+            BISHAL<span className="text-orange-400">.</span>DE
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -56,7 +56,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Right */}
-          <div className="hidden md:flex items-center gap-5">
+          <div className="hidden lg:flex items-center gap-5">
             <a
               href="/Bishal_Resume.pdf"
               target="_blank"
@@ -75,7 +75,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-full hover:bg-foreground/5 transition-colors"
+            className="lg:hidden relative z-50 w-11 h-11 flex items-center justify-center rounded-full hover:bg-foreground/5 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -96,7 +96,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-40 lg:hidden"
           >
             <div className="absolute inset-0 backdrop-blur-2xl bg-background/95" />
             <nav className="relative h-full flex flex-col items-center justify-center gap-8">

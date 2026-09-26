@@ -64,9 +64,9 @@ export default function Contact() {
                 <dd className="text-sm text-white">{value}</dd>
               </div>
             ))}
-            <div className="flex items-center justify-between py-4">
+            <div className="flex flex-col items-start gap-2 py-4 sm:flex-row sm:items-center sm:justify-between">
               <dt className="text-xs uppercase tracking-wider text-white/45">Elsewhere</dt>
-              <dd className="flex gap-5 text-sm">
+              <dd className="flex flex-wrap gap-x-5 text-sm">
                 {[
                   { href: "https://www.linkedin.com/in/bishalde/", label: "LinkedIn" },
                   { href: "https://github.com/bishalde", label: "GitHub" },
@@ -77,7 +77,7 @@ export default function Contact() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1 text-white/80 transition-colors hover:text-white"
+                    className="group inline-flex items-center gap-1 py-1.5 text-white/80 transition-colors hover:text-white"
                   >
                     {s.label}
                     <Arrow dir="up-right" className="h-2.5 w-2.5 text-orange-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

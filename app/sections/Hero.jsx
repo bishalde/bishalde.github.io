@@ -110,7 +110,10 @@ function FloatingCards({ category }) {
 }
 
 export default function Hero() {
-  const [active, setActive] = useState(Math.min(2, categories.length - 1));
+  // Open on DevOps & Observability; fall back to the first category if it's renamed.
+  const [active, setActive] = useState(() =>
+    Math.max(0, categories.findIndex((c) => c.name === "DevOps & Observability"))
+  );
 
   return (
     <section id="home" className="relative pt-24 pb-10 sm:pt-28" itemScope itemType="https://schema.org/Person">
@@ -194,11 +197,14 @@ export default function Hero() {
         <div className="relative z-10 grid grid-cols-2 gap-6 px-5 pb-6 pt-10 sm:px-8 lg:absolute lg:inset-x-0 lg:bottom-0 lg:grid-cols-3 lg:px-6 lg:pb-6 lg:pt-0">
           <div className="leading-tight">
             <p className="text-[11px] uppercase tracking-wide text-white/50">Availability</p>
-            <p className="mt-0.5 flex items-center gap-2 text-sm font-medium italic text-white">
-              Open to freelance
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+            <p className="mt-0.5 text-sm font-medium italic text-white">
+              Open to{" "}
+              <span className="whitespace-nowrap">
+                freelance
+                <span className="relative ml-2 inline-flex h-2 w-2 align-middle">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                </span>
               </span>
             </p>
           </div>

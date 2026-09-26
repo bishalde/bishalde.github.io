@@ -54,21 +54,24 @@ export default function Footer() {
         {/* Link columns */}
         <div className="grid grid-cols-2 gap-10 py-14 md:grid-cols-4">
           <Column title="Availability">
-            <p className="flex items-center gap-2 text-lg font-medium italic text-white">
-              Open to freelance
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+            <p className="text-base font-medium italic text-white sm:text-lg">
+              Open to{" "}
+              <span className="whitespace-nowrap">
+                freelance
+                <span className="relative ml-2 inline-flex h-2 w-2 align-middle">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                </span>
               </span>
             </p>
             <p className="mt-2 text-sm text-white/50">Bengaluru, India · IST</p>
           </Column>
 
           <Column title="Menu">
-            <ul className="space-y-2.5">
+            <ul className="space-y-1">
               {nav.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-white/70 transition-colors hover:text-white">
+                  <a href={l.href} className="inline-block py-1.5 text-white/70 transition-colors hover:text-white">
                     {l.label}
                   </a>
                 </li>
@@ -77,14 +80,14 @@ export default function Footer() {
           </Column>
 
           <Column title="Elsewhere">
-            <ul className="space-y-2.5">
+            <ul className="space-y-1">
               {links.map((l) => (
                 <li key={l.label}>
                   <a
                     href={l.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1.5 text-white/70 transition-colors hover:text-white"
+                    className="group inline-flex items-center gap-1.5 py-1.5 text-white/70 transition-colors hover:text-white"
                   >
                     {l.label}
                     <Arrow dir="up-right" className="h-2.5 w-2.5 text-orange-400 opacity-0 transition-opacity group-hover:opacity-100" />
