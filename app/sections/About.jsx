@@ -1,83 +1,101 @@
+"use client";
+import { useEffect, useRef } from "react";
+import { motion, useInView, useSpring, useMotionValue, useTransform } from "framer-motion";
 import Section from "../components/Section";
-import Reveal from "../components/Reveal";
-import Badge from "../components/Badge";
 import { profile } from "../data";
 
-export default function About() {
+const ease = [0.16, 1, 0.3, 1];
+
+const stats = [
+  { value: 3, suffix: "+", label: "Years of experience" },
+  { value: 50, suffix: "+", label: "Projects shipped" },
+  { value: 5, suffix: "", label: "Hackathon wins" },
+  { value: 5, suffix: "★", label: "Fiverr rating" },
+];
+
+function Counter({ value, suffix, label, index }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const mv = useMotionValue(0);
+  const spring = useSpring(mv, { damping: 30, stiffness: 90 });
+  const display = useTransform(spring, (v) => Math.round(v));
+
+  useEffect(() => {
+    if (isInView) mv.set(value);
+  }, [isInView, mv, value]);
+
   return (
-    <Section
-      id="about"
-      eyebrow="About Bishal De"
-      title="Expert Full-Stack Developer & AI Engineer"
-      subtitle="Crafting scalable web applications, intelligent AI solutions, and robust cloud infrastructure for businesses worldwide."
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, delay: index * 0.08, ease }}
+      className="border-t border-white/10 pt-5"
     >
-      <Reveal>
-        <div className="max-w-3xl mx-auto text-left space-y-6" itemScope itemType="https://schema.org/Person">
-          <div className="space-y-4">
-            <p className="text-muted-foreground leading-relaxed">
-              As a <strong>Software Development Engineer at Twilio</strong>, I specialize in building observability systems and distributed architectures that power global communications. With over <strong>3 years of professional experience</strong>, I've delivered scalable solutions across the full technology stack.
-            </p>
-            
-            <p className="text-muted-foreground leading-relaxed">
-              My expertise spans <strong>Full-Stack Web Development</strong> using React, Next.js, and Node.js, <strong>Machine Learning and AI</strong> with Python and TensorFlow, and <strong>DevOps & Cloud Infrastructure</strong> on AWS with Docker and Kubernetes. I've successfully led projects from conception to deployment, consistently delivering high-quality solutions that drive business growth.
-            </p>
-            
-            <p className="text-muted-foreground leading-relaxed">
-              <span itemProp="description">I'm passionate about creating innovative solutions that solve real-world problems. Whether it's developing intelligent chatbots, building performant web applications, or architecting scalable cloud systems, I bring a unique blend of technical expertise and creative problem-solving to every project.</span>
-            </p>
-          </div>
-          
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-foreground">My Specializations</h3>
-            <div className="flex flex-wrap gap-2">
-              {profile.roles.map((role) => (
-                <Badge key={role} className="text-sm">
-                  {role}
-                </Badge>
-              ))}
-            </div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6 p-6 rounded-xl glass">
-            <div>
-              <h4 className="font-semibold text-foreground mb-2">🏆 Track Record</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>✅ 3+ years professional experience</li>
-                <li>✅ Software Engineer at Twilio</li>
-                <li>✅ Multiple hackathon winner</li>
-                <li>✅ 9.76 CGPA in AI & ML</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-foreground mb-2">🎯 Available For</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>✅ Full-stack web development</li>
-                <li>✅ AI/ML solution development</li>
-                <li>✅ DevOps & cloud consulting</li>
-                <li>✅ Technical architecture design</li>
-              </ul>
-            </div>
-          </div>
-          
-          {profile.fiverr && (
-            <div className="flex items-center justify-center p-4 rounded-lg bg-primary/10 border border-primary/20">
-              <span className="font-medium text-foreground">{profile.fiverr.label}</span>
-              <span className="text-primary ml-2 text-lg">({profile.fiverr.rating}★)</span>
-              <span className="ml-3 text-sm text-muted-foreground">- Trusted by clients worldwide</span>
-            </div>
-          )}
-          
-          {/* Hidden SEO content */}
-          <div className="hidden" itemProp="knowsAbout">
-            React developer, Next.js expert, Python programmer, JavaScript developer, Go programming, 
-            Full stack development, Machine learning engineer, AI development, DevOps specialist, 
-            AWS cloud architect, Docker containers, Kubernetes orchestration, API development, 
-            Database design, System architecture, Microservices, CI/CD pipelines, Web development, 
-            Mobile app development, Freelance developer, Remote work, Software consulting, 
-            Technical leadership, Startup CTO, MVP development, Bengaluru developer, India developer
-          </div>
+      <div className="flex items-start">
+        <motion.span className="text-6xl font-medium tracking-[-0.05em] text-white tabular-nums sm:text-7xl">
+          {display}
+        </motion.span>
+        <span className="ml-1 mt-1 text-2xl font-medium text-orange-400">{suffix}</span>
+      </div>
+      <p className="mt-2 text-sm text-muted-foreground">{label}</p>
+    </motion.div>
+  );
+}
+
+export default function About() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <Section id="about" eyebrow="About Me" title="Engineer, builder, tinkerer">
+      <div ref={ref} className="grid gap-16 lg:grid-cols-[1.4fr_1fr] lg:gap-24">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease }}
+            className="text-2xl font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-3xl lg:text-[2.35rem]"
+          >
+            I&apos;m a Software Development Engineer at <span className="italic text-orange-400">Twilio</span>, building
+            observability systems for distributed architectures that power global communications.{" "}
+            <span className="text-white/40">
+              Three years in, I work across the whole stack — React and Next.js frontends, Python and Go services,
+              ML &amp; LLM systems, and the AWS, Docker and Kubernetes infrastructure underneath.
+            </span>
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.15, ease }}
+            className="mt-8 max-w-xl leading-relaxed text-muted-foreground"
+          >
+            I care about real-world problems: intelligent systems that are genuinely useful, web apps that feel
+            fast, and cloud infrastructure that stays quiet at 3 a.m.
+          </motion.p>
+
+          <motion.ul
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-10 divide-y divide-white/10 border-y border-white/10"
+          >
+            {profile.roles.map((role, i) => (
+              <li key={role} className="group flex items-center justify-between py-3.5">
+                <span className="text-lg text-white/85 transition-colors group-hover:text-white">{role}</span>
+                <span className="text-xs tabular-nums text-white/30">{String(i + 1).padStart(2, "0")}</span>
+              </li>
+            ))}
+          </motion.ul>
         </div>
-      </Reveal>
+
+        <div className="grid grid-cols-2 content-start gap-x-8 gap-y-12">
+          {stats.map((s, i) => (
+            <Counter key={s.label} {...s} index={i} />
+          ))}
+        </div>
+      </div>
     </Section>
   );
 }

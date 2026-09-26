@@ -1,8 +1,6 @@
 export const profile = {
   name: "BISHAL DE",
   location: "Bengaluru, Karnataka",
-  phone: "+91 8299260163",
-  email: "itsbishalde@gmail.com",
   website: "#",
   summary:
     "Full-Stack Web Developer & Machine Learning Specialist with 3+ years of experience delivering scalable applications across MERN, Python, and cloud-native stacks. Strong focus on performant UX, observability, and reliable delivery.",
