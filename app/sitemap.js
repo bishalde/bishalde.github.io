@@ -1,55 +1,9 @@
-export default function sitemap() {
-  const baseUrl = 'https://bishalde.vercel.app';
-  const currentDate = new Date().toISOString();
+const SITE_URL = "https://bishalde.vercel.app";
 
+// Single-page site: search engines ignore #section URLs, so list real URLs only.
+export default function sitemap() {
   return [
-    {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/#about`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/#skills`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#projects`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/#experience`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#education`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/Bishal_Resume.pdf`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
+    { url: SITE_URL, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
+    { url: `${SITE_URL}/Bishal_Resume.pdf`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
   ];
 }

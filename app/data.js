@@ -164,6 +164,14 @@ export const profile = {
       image: "/projects/qrbuilder.jpg",
     },
     {
+      title: "GitHubCrawler",
+      description:
+        "Explore any GitHub profile instantly: language mix, top repos, total stars and a repo timeline, plus a repo explorer and side-by-side developer comparison. No sign-in needed.",
+      tags: ["GitHub API", "Analytics", "Web App"],
+      link: "https://githubcrawler.vercel.app/",
+      image: "/projects/githubcrawler.jpg",
+    },
+    {
       title: "ProjectTree",
       description:
         "Open-source platform to showcase and discover developer projects.",
@@ -172,8 +180,10 @@ export const profile = {
     {
       title: "Shrinkk",
       description:
-        "Django-based link shortener with tracking, branding, and easy sharing.",
-      tags: ["Django", "URLs"],
+        "Shorten links, generate QR codes and build a link-in-bio page, then see who's clicking and from where. Free to use.",
+      tags: ["Link Shortener", "QR Codes", "Analytics"],
+      link: "https://shrinkk.vercel.app/",
+      image: "/projects/shrinkk.jpg",
     },
   ],
   scholarships: [
