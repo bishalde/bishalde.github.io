@@ -116,7 +116,7 @@ export default function Hero() {
   );
 
   return (
-    <section id="home" className="relative pt-24 pb-10 sm:pt-28" itemScope itemType="https://schema.org/Person">
+    <section id="home" className="relative pt-24 pb-10 sm:pt-28">
       <div className="relative isolate overflow-hidden bg-[#161616] lg:aspect-[1.41/1] lg:max-h-[860px] lg:min-h-[680px]">
         {/* Portrait */}
         <motion.div
@@ -132,7 +132,6 @@ export default function Hero() {
             priority
             className="object-cover object-[50%_35%] grayscale contrast-[1.1]"
             sizes="(max-width: 1024px) 100vw, 56vw"
-            itemProp="image"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#161616] lg:bg-gradient-to-r lg:via-60%" />
         </motion.div>
@@ -153,7 +152,6 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.35, ease }}
           className="pointer-events-none relative z-10 -mt-[38vw] px-5 leading-[0.8] tracking-[-0.06em] text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.45)] sm:-mt-[30vw] sm:px-8 lg:absolute lg:bottom-[13%] lg:left-[25%] lg:mt-0 lg:px-0"
-          itemProp="name"
         >
           <span className="block pl-[0.35em] text-[22vw] font-medium sm:text-[16vw] lg:text-[9.5rem] xl:text-[10.5rem]">
             Bishal
@@ -210,7 +208,7 @@ export default function Hero() {
           </div>
           <div className="leading-tight lg:text-center">
             <p className="text-[11px] uppercase tracking-wide text-white/50">Location</p>
-            <p className="mt-0.5 text-sm text-white" itemProp="address">
+            <p className="mt-0.5 text-sm text-white">
               {profile.location}, India
             </p>
           </div>
@@ -250,9 +248,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hidden" itemProp="knowsAbout">
-        React, Next.js, Python, JavaScript, Go, Node.js, Django, Flask, FastAPI, AWS, Docker, Kubernetes, Machine Learning, Artificial Intelligence, DevOps
-      </div>
     </section>
   );
 }
