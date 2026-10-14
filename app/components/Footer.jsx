@@ -1,4 +1,5 @@
 import Arrow from "./Arrow";
+import VisitorStats from "./VisitorStats";
 
 const links = [
   { href: "https://github.com/bishalde", label: "GitHub" },
@@ -121,6 +122,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-2 border-t border-white/10 py-6 text-xs text-white/40 sm:flex-row sm:justify-between">
           <span>&copy; {new Date().getFullYear()} Bishal De. All rights reserved.</span>
+          <VisitorStats />
           <span>Designed &amp; built by Bishal</span>
         </div>
       </div>
