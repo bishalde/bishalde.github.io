@@ -136,6 +136,14 @@ export const profile = {
   ],
   projects: [
     {
+      title: "CountJar",
+      description:
+        "Hosted counters where every number gets its own URL. Count page views, likes, votes and ratings over a simple API, show them with drop-in widgets and badges, and get milestone alerts by webhook or SMS.",
+      tags: ["Counter API", "Widgets", "Web App"],
+      link: "https://countjar.vercel.app/",
+      image: "/projects/countjar.jpg",
+    },
+    {
       title: "MemoryBell",
       description:
         "Save a date once and get a text on the day, or up to a week ahead, every year. Counts the years and keeps your gift ideas.",
