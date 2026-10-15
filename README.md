@@ -63,6 +63,7 @@ I care about real-world problems: intelligent systems that are genuinely useful,
 
 | Project | What it is |
 | --- | --- |
+| **[CountJar](https://countjar.vercel.app/)** 🟢 Live | Hosted counter API with drop-in widgets, SVG badges, history charts and milestone alerts by webhook or SMS |
 | **[MemoryBell](https://memorybell.vercel.app/)** 🟢 Live | Free reminder service for birthdays and anniversaries, with personalised SMS and automated phone calls sent days ahead |
 | **Generative AI Financial Advisor** | Assistant built on LLAMA-2, OpenAI and Gemini that answers questions about uploaded financial documents |
 | **Interactive KYC Verification** | Conversational, multilingual KYC using WebSockets and LLMs for real-time interactions |
