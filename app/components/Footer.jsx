@@ -9,11 +9,12 @@ const links = [
 ];
 
 const nav = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/open-source", label: "Open Source" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 function Column({ title, children }) {
@@ -42,7 +43,7 @@ export default function Footer() {
             </span>
           </h2>
           <a
-            href="#contact"
+            href="/#contact"
             className="bubble group flex h-36 w-36 shrink-0 flex-col items-start justify-center self-start pl-8 text-2xl font-medium leading-[1.05] text-white transition-transform hover:scale-105 lg:self-auto"
           >
             Book a
@@ -100,7 +101,7 @@ export default function Footer() {
 
           <div className="flex items-start md:justify-end">
             <a
-              href="#home"
+              href="/#home"
               aria-label="Back to top"
               className="group flex h-14 w-14 items-center justify-center rounded-full border border-white/15 text-white transition-all hover:border-white hover:bg-white hover:text-black"
             >

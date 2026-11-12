@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/open-source", label: "Open Source" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -38,7 +39,7 @@ export default function Navbar() {
       >
         <nav className="mx-auto max-w-7xl px-6 sm:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="#" className="font-display text-2xl font-bold tracking-tight text-foreground transition-opacity hover:opacity-80">
+          <Link href="/" className="font-display text-2xl font-bold tracking-tight text-foreground transition-opacity hover:opacity-80">
             BISHAL<span className="text-orange-400">.</span>DE
           </Link>
 
@@ -66,7 +67,7 @@ export default function Navbar() {
               Resume
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               className="font-display rounded-full border border-white/20 bg-white/5 px-6 py-2 text-lg tracking-wide text-white backdrop-blur-md transition-all duration-200 hover:border-white/40 hover:bg-white/10"
             >
               Hire Me

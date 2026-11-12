@@ -5,6 +5,7 @@ import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
 import Education from "./sections/Education";
+import OpenSource from "./sections/OpenSource";
 import Achievements from "./sections/Achievements";
 import Languages from "./sections/Languages";
 import CTA from "./sections/CTA";
@@ -19,6 +20,7 @@ export default function Home() {
       <Services />
       <Skills />
       <Projects />
+      <OpenSource />
       <Experience />
       <Education />
       <Achievements />

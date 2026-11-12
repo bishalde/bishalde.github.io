@@ -1,0 +1,42 @@
+[
+  {
+    "repo": "grafana/grafana-prometheus-datasource",
+    "logo": "grafana",
+    "number": 418,
+    "url": "https://github.com/grafana/grafana-prometheus-datasource/pull/418",
+    "title": "Fix config editor crash when exemplar destinations aren't a list",
+    "merged": "2026-11-11",
+    "summary": "If a Prometheus data source was set up from a config file with a single exemplar link instead of a list, Grafana's settings page crashed and couldn't be opened. Now the bad value is safely ignored and a warning explains what's wrong, so the page always loads.",
+    "tags": [
+      "React",
+      "TypeScript"
+    ]
+  },
+  {
+    "repo": "grafana/grafana-prometheus-datasource",
+    "logo": "grafana",
+    "number": 417,
+    "url": "https://github.com/grafana/grafana-prometheus-datasource/pull/417",
+    "title": "Fix query editor crash when the cache overlap window is a number",
+    "merged": "2026-11-10",
+    "summary": "Writing the query cache overlap window as a plain number (say 600) instead of text like \"10m\" made the Prometheus query editor crash. Grafana now falls back to the 10-minute default, just like it does for any other invalid value.",
+    "tags": [
+      "React",
+      "TypeScript"
+    ]
+  },
+  {
+    "repo": "grafana/mcp-grafana",
+    "logo": "grafana",
+    "number": 1501,
+    "url": "https://github.com/grafana/mcp-grafana/pull/1501",
+    "title": "Make AI-generated Grafana links work with plain dates",
+    "merged": "2026-11-09",
+    "summary": "Grafana's MCP server lets AI assistants open dashboards and grab panel images. When the assistant asked for a time range like \"2026-04-28\", the link could jump to 1970. Those dates are now converted correctly, so links open on the day you asked for.",
+    "tags": [
+      "Go",
+      "MCP",
+      "AI"
+    ]
+  }
+]
