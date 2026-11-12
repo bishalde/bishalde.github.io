@@ -1,6 +1,7 @@
 [
   {
     "repo": "grafana/grafana-prometheus-datasource",
+    "logo": "grafana",
     "number": 418,
     "url": "https://github.com/grafana/grafana-prometheus-datasource/pull/418",
     "title": "Fix config editor crash when exemplar destinations aren't a list",
@@ -13,6 +14,7 @@
   },
   {
     "repo": "grafana/grafana-prometheus-datasource",
+    "logo": "grafana",
     "number": 417,
     "url": "https://github.com/grafana/grafana-prometheus-datasource/pull/417",
     "title": "Fix query editor crash when the cache overlap window is a number",
@@ -25,6 +27,7 @@
   },
   {
     "repo": "grafana/mcp-grafana",
+    "logo": "grafana",
     "number": 1501,
     "url": "https://github.com/grafana/mcp-grafana/pull/1501",
     "title": "Make AI-generated Grafana links work with plain dates",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Arrow from "../components/Arrow";
+import OrgLogo from "../components/OrgLogo";
 import contributions from "../content/open-source.json";
 
 export const metadata = {
@@ -48,7 +49,12 @@ export default function OpenSourcePage() {
               <span className="text-sm tabular-nums text-white/40">({String(i + 1).padStart(2, "0")})</span>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">
-                  <span className="text-white/50">{p.repo}</span>
+                  <span className="flex items-center gap-2.5 text-white/50">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/[0.04] ring-1 ring-white/10">
+                      <OrgLogo name={p.logo} className="h-[18px] w-[18px]" />
+                    </span>
+                    {p.repo}
+                  </span>
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-[#ab7df8]/40 px-2.5 py-0.5 text-[#ab7df8]">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#ab7df8]" /> Merged {formatDate(p.merged)}
                   </span>

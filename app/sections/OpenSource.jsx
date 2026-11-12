@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Section from "../components/Section";
 import Arrow from "../components/Arrow";
+import OrgLogo from "../components/OrgLogo";
 import contributions from "../content/open-source.json";
 
 const ease = [0.16, 1, 0.3, 1];
@@ -35,8 +36,13 @@ export default function OpenSource() {
                 rel="noopener noreferrer"
                 className="group flex h-full flex-col rounded-2xl border border-white/[0.07] bg-[#141414] p-6 transition-colors hover:border-white/20"
               >
-                <span className="text-xs text-white/40">
-                  {p.repo} <span className="text-orange-400">#{p.number}</span>
+                <span className="flex items-start gap-3 text-xs text-white/40">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.04] ring-1 ring-white/10">
+                    <OrgLogo name={p.logo} className="h-5 w-5" />
+                  </span>
+                  <span className="min-w-0 pt-0.5">
+                    {p.repo} <span className="text-orange-400">#{p.number}</span>
+                  </span>
                 </span>
                 <h3 className="mt-3 text-lg font-medium leading-snug tracking-[-0.02em] text-white">{p.title}</h3>
                 <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-xs text-[#ab7df8]">
