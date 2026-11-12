@@ -3,12 +3,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Section from "../components/Section";
 import Arrow from "../components/Arrow";
-import { profile } from "../data";
+import contributions from "../content/open-source.json";
 
 const ease = [0.16, 1, 0.3, 1];
 
 export default function OpenSource() {
-  const prs = profile.openSource;
+  const prs = contributions;
   const repos = [...new Set(prs.map((p) => p.repo))];
 
   return (
